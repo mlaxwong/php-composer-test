@@ -16,7 +16,8 @@ ini_set('max_execution_time', 0);
 
 $_ENV['COMPOSER_HOME'] = __DIR__ . '/runtime';
 // $_ENV['COMPOSER_HOME'] = 'C:\Users\Inspiren\AppData\Roaming\Composer';
-$process = new Process([__DIR__ . '/vendor/bin/composer', 'require', 'yiisoft/yii2']);
+$process = new Process([__DIR__ . '/vendor/bin/composer', 'require', 'yiisoft/yii2 ~2.0.0', 'php ~4.0.0']);
+$process->setTimeout(null);
 $process->start();
 
 echo '<pre>';
